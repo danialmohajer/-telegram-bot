@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: danial-mohajer-telegram-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_USERNAME
+        value: hamidi_arsalan
+      - key: CHANNEL_URL
+        value: https://t.me/danialmohajerofficial
+      - key: WEBHOOK_SECRET
+        generateValue: true
